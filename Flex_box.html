@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+			margin: 100px;
+			padding: 20px;
+            display: flex;
+            flex-direction: column; /* Items are arranged vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 300px;
+           
+        }
+		.container1 {
+            display: flex;
+            justify-content: center; /* Horizontal alignment: center */
+            align-items: center; /* Vertical alignment: center */
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+        .item {
+            width: 100px;
+            height: 80px;
+            background-color: #3498db;
+            margin: 10px;
+        }
+		
+		.item2 {
+            width: 220px;
+            height: 80px;
+            background-color: #3498db;
+            margin: 10px;
+        }
+
+
+
+        .Animation {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(21, 41, 189);
+        animation-name: example;
+        animation-duration: 6s;
+        }
+
+        @keyframes example {
+        from {background-color:rgb(21, 41, 189);}
+        to {background-color: yellow;}
+        }
+
+
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-100px);
+            }
+        }
+
+
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            animation: bounce 2s ease infinite;
+        }
+
+
+        .card {
+            width: 200px;
+            height: 250px;
+            background-color: #3498db;
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 100px auto;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h2>
+        Video Tag of HTML to display video instead of Flash
+    </h2>
+    <video width="320" height="240" controls>
+        <source src="images\movie.mp4" type="video/mp4">
+        
+        Your browser does not support the video tag.
+      </video>
+ 
+      <h2>
+        Flex box 
+      </h2>
+
+    <div class="container">
+        <div class="container1"><div class="item"></div><div class="item"></div></div>
+        <div class="container1"><div class="item"></div><div class="item"></div></div>
+        <div class="container1"><div class="item2"></div></div>
+		<div class="container1"><div class="item"></div><div class="item"></div></div>
+    </div>
+
+    <h2>
+        Animation Example 
+    </h2>
+    <div class="ball"></div>
+
+
+   
+        <div class="card">
+            <h1>Box Shadows and Border Radii</h1>
+            <p>This card demonstrates the use of CSS box shadows and border radii.</p>
+        </div>
+   
+</body>
+</html>

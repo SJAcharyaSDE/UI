@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Features</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="MainController">
+        <h1>{{ message }}</h1>
+        
+        <h2>Directives</h2>
+        <ul>
+            <li ng-repeat="directive in directives">{{ directive }}</li>
+        </ul>
+        
+        <h2>Two-way Data Binding</h2>
+        <input type="text" ng-model="dataBindingExample">
+        <p>You typed: {{ dataBindingExample }}</p>
+        
+        <h2>Controllers</h2>
+        <button ng-click="changeMessage()">Change Message</button>
+        
+        <h2>Filters</h2>
+        <p>Original Text: {{ originalText }}</p>
+        <p>Uppercase Text: {{ originalText | uppercase }}</p>
+        
+        <h2>Services</h2>
+        <p>Random Number: {{ getRandomNumber() }}</p>
+        
+        <h2>ngIf and ngSwitch</h2>
+        <div ng-if="showElement">
+            <p>This element is displayed using ngIf.</p>
+        </div>
+        <div ng-switch="switchExample">
+            <div ng-switch-when="1">One</div>
+            <div ng-switch-when="2">Two</div>
+            <div ng-switch-when="3">Three</div>
+            <div ng-switch-default>Default (Not 1, 2, or 3)</div>
+        </div>
+        
+        <h2>ngRepeat</h2>
+        <ul>
+            <li ng-repeat="item in repeatItems">{{ item }}</li>
+        </ul>
+        
+        <h2>Form Validation</h2>
+        <form name="myForm" novalidate>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" ng-model="user.email" required>
+            <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+            <span ng-show="myForm.email.$error.required">Email is required.</span>
+        </form>
+    </div>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        
+        app.controller('MainController', function($scope) {
+            $scope.message = 'Welcome to AngularJS!';
+            $scope.directives = ['ng-repeat', 'ng-model', 'ng-click', 'ng-show', 'ng-hide', 'ng-if', 'ng-switch'];
+            $scope.dataBindingExample = '';
+            $scope.originalText = 'Hello, AngularJS!';
+            $scope.showElement = true;
+            $scope.switchExample = 2;
+            $scope.repeatItems = ['Item 1', 'Item 2', 'Item 3'];
+            $scope.user = { email: '' };
+            
+            $scope.changeMessage = function() {
+                $scope.message = 'Message Changed!';
+            };
+            
+            $scope.getRandomNumber = function() {
+                return Math.floor(Math.random() * 100);
+            };
+        });
+    </script>
+</body>
+</html>
